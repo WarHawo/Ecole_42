@@ -108,29 +108,3 @@ void print_ints (int num, ...)
 ```
 
 Il faut garder des choses en têtes, le programme ne sait pas vraiment le nombre d’argument qu’on lui passe en paramètre, si on met un extra int alors qu’on lui avait indiqué qu’on voulait seulement imprimer 3 le quatrième sera  ignoré. Et je ne ne mets pas assez d’argument ça va faire buger la fonction. 
-
-```c
-// propotype d' une fonction printf 
-
-int printf (const char *format, ...)
-{
-	va_list args;
-	int done;
-
-	va_start(args, format);
-	done = vprintf(stdout, format, args);
-	va_end(args);
-
-	return done;
-}
-```
-
-# **Vprintf**
-
-La fonction vprintf prend un pointeur désignant une liste d'arguments, puis met en forme et écrit les données fournies dans une destination particulière.
-
-L'argument ap est de type va_list. La variable ap doit être initialisée par va_start et peut être réinitialisée par les appels ultérieur à va_arg; ap pointe ensuite vers le début d'une liste d'argument qui sont convertis et transmis pour la sortie en fonction des spécifications correspondantes dans l'argument format.
-
-Vprintf n'appelle pas va_end.
-
-La fonction équivalente à printf mais elle emploie un tableau va_list à la place d'un nombre variable d'arguments. Ces fonctions n'appellent pas la macro va_end. Du fait qu'elles appèlent la macro va_arg, la valeur de ap n'est pas définie après l'appel.
