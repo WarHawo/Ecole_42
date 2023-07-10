@@ -117,7 +117,7 @@ docker exec -ti Hawa sh
 On veut se connecter au shell du conteneur Hawa.
 
 
-#Correction 
+# Correction 
 ```c
 sudo nginx -s stop
 ```
