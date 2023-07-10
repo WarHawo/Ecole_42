@@ -1,2 +1,2 @@
 # Ecole_42
-All the projects done during in 42 school
+All the projects done in 42 school
