@@ -1,4 +1,4 @@
-Adresse IP
+### Adresse IP
 Une adresse IP est un nombre codé sur 32 bits (32 ‘0’ ou ‘1’) qui représente un numéro unique de machine sur un réseau IP.
 
 Une adresse IP est une suite de 4 octets
@@ -13,20 +13,26 @@ Les adresses IP sont composées de deux parties: la partie « réseau » et la p
 
 La classes de l’adresse IP détermine quelle partie de l’adresse code le réseau et quelle partie code le numéro de machine (hôte). Il y a  5 classes d’adresse IP.
 
-Les classes d’adresse IP
-Nom	Masque de sous-réseau	Adresse réseau	Nombre de réseau	Plage premier octet
-📕A	255.0.0.0	1.0.0.0 - 126.255.255.255	126	0 à 127
-📕C	255.255.255.0	192.0.0.0 - 223.255.255.255	2097152	192 à 223
-📕B	255.255.0.0	128.0.0.0 - 191.255.255.255	16384	128 à 191
-📕D	240.0.0.0	224.0.0.0 - 239.255.255.255	Adresses uniques	224 à 239
-📕E	Non défini	240.0.0.0 - 255.255.255	Adresses uniques	240 à 255
+### Les classes d’adresse IP
+
+Nom	Masque de sous-réseau | Adresse réseau | Nombre de réseau | Plage premier octet
+
+- A	255.0.0.0	1.0.0.0 - 126.255.255.255	126	0 à 127
+
+- C	255.255.255.0	192.0.0.0 - 223.255.255.255	2097152	192 à 223
+
+- B	255.255.0.0	128.0.0.0 - 191.255.255.255	16384	128 à 191
+
+- D	240.0.0.0	224.0.0.0 - 239.255.255.255	Adresses uniques	224 à 239
+
+- E	Non défini	240.0.0.0 - 255.255.255	Adresses uniques	240 à 255
 
 
 On n’utilise généralement pas la classe D et E. La classe par défaut est la classe C.
 
 La classe avec le plus d’adresse hôtes disponible pas défaut est la classe A.
 
-Adresse IP privé
+### Adresse IP privé
 Il existe 3 sortes d’adresse privé.
 
 10.0.0.0 /8  (utilisé dans un lycée par exemple)
@@ -81,13 +87,13 @@ OU binaire                          ——————————————�
 
 Adresse broadcats:           1001 0110.000 1010.0000 1011.1111 1111.            150.10.11.255
 
-Le modèle OSI
+### Le modèle OSI
 le modèle OSI est une norme qui préconise comment les ordinateurs devraient communiquer entre eux. Son objectif est de normaliser les communications pour garantir un maximum d’évolutivité et d’interopérabilité entre les ordinateus.
 
 Le modèle OSi est une modèle en couches. Cela veut dire qu’il est découper en plusieurs morceaux appelés couches, qui ont chacune un rôle défini.
 
 
-Le protocole TCP
+### Le protocole TCP
 Tcp qui signifie Transmission control Protocol est un des principes de la couche transport du modèle TCP/IP. Il permet, au niveau des applications, de gérer les données en provenance, ou à destination, de la couche inférieur.
 
 TCP est un protocole oriente connexion. Il vérifie si les données sont bien réceptionnées.
@@ -103,14 +109,14 @@ UDP est plus rapide
 
 UDP orienté transaction et fournit des datagrammes
 
-Ping
+### Ping
 Ping utilise ICMP
 
 Trouver le local host 127.0.0.1
 
 
 
-DHCP
+### DHCP
 DHCP permet de créer des un mécanismes de création d’adresse IP
 
 DHCP utilise UDP
