@@ -310,3 +310,76 @@ Aucune.
 - fd: le file descriptor sur lequel écrire
 ### VALEUR DE RETOUR
 Aucune.
+
+# PART 3 - Fonction bonus
+
+## 1. LST_NEW
+Alloue avec malloc et renvoie un nouvel élément. la variable content est initialisée à l’aide de la valeur du paramètre content. La variable next est initialisée à NULL.
+### PARAMÈTRES
+- Le contenu du nouvel élément
+### VALEUR DE RETOUR
+Le nouvel élément
+
+## 2. LST_ADD_FRONT
+Ajoute l'élément new au début de la liste
+### PARAMÈTRES
+- *alst*: L'adresse du pointeur vers le premier élément de la liste
+- *new*: L'adresse du pointeur vers l'élémnet à rajouter à la liste
+### VALEUR DE RETOUR
+aucune
+
+## 3. LST_SIZE
+Compte le nombre d'élément de la liste
+### PARAMÈTRES
+- Le début de la liste
+### VALEUR DE RETOUR
+taille de la liste
+
+## 4. LST_LAST
+Renvoie le dernier élément de la liste.
+### PARAMÈTRES
+- Le début de la liste
+### VALEUR DE RETOUR
+Dernier élément de la liste
+
+## 5. LST_ADD_BACK
+Ajoute l’élément new à la fin de la liste.
+### PARAMÈTRES
+- *alst*: L'adresse du pointeur vers le premier élément de la liste
+- *new*: L'adresse du pointeur vers l'élément à rjouter à la liste
+### VALEUR DE RETOUR
+aucune
+
+
+## 6. LST_DELONE
+Libère la mémoire de l’élément passé en argument en utilisant la fonction del puis avec free. La mémoire de next ne doit pas être free.
+### PARAMÈTRES
+- *lst*: l'élément à free
+- *(del)* : l'adresse de la fonction permettant de supprimer le contenu de l'élément
+### VALEUR DE RETOUR
+aucune
+
+
+## 7. LST_CLEAR
+Supprime et libère la mémoire de l’élément passé en paramètre, et de tous les élements qui suivent, à l’aide de del et de free. Enfin, le pointeur initial doit être mis à NULL.
+### PARAMÈTRES
+- *lst*: l'adresse du pointeur vers un élément
+- *del*: l'adresse de la fonction permettant de supprimer le contenu d'un élément
+### VALEUR DE RETOUR
+aucune
+
+## 8. LST_ITER
+Description Itère sur la list lst et applique la fonction f au contenu chaque élément.
+### PARAMÈTRES
+- *lst*: L'adresse du pointeur vers un élément
+- *f*: L'adresse de la fonction à appliquer
+### VALEUR DE RETOUR
+aucune
+
+## 8. LST_MAP
+Itère sur la liste lst et applique la fonction f au contenu de chaque élément. Crée une nouvelle liste résultant des applications successives de *(f).* la fonction del est la pour détruire le contenu d un element si necessaire.
+### PARAMÈTRES
+- *lst*: L'adressedu pointeur vers un élément
+- *del*: L'adresse de la fonction à appliquer
+### VALEUR DE RETOUR
+La nouvelle liste. NULL si l'allocation échoue.
