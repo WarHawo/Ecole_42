@@ -1,10 +1,10 @@
-#FT_SERVER
+# FT_SERVER
 
 Ce sujet à pour but de nous faire découvrir l'administration système en nous sensibilisant à l'importance de l'utilisation de scripts pour automatiser les taches. Nous allons utiliser la technologie "Docker" afin d'installer un serveur web web complet, qui sera capable de faire tourner plusieurs services, tel qu'un Wordpress, Phpmyadmin ainsi qu'une base de donné.
 
 ---
 
-# Qu'est qu'un serveur web ?
+## Qu'est qu'un serveur web ?
 
 Un serveur web est un serveur informatique qui permet de stocker ou de publier des pages web sur internet ou sur intranet et généralement écrite en HTML.
 
@@ -18,7 +18,7 @@ On parle de serveur web static lorsque  le serveur web envoie les fichiers hébe
 
 Le serveur web dynamique inclue quand a lui en plus de l'OS et du serveur HTTP une base de donnée comme MySql qui va stocker les données et un langage de scripte comme le PHP par exemple. Le rôle de ce dernier est d'interpréter les demandes du client et de les traduire ensuite en HTML. On parle donc de serveurs web dynamique quand les fichiers hébergés sont mis à jours avant d'être envoyé aux clients via HTTP.
 
-# Qu'est ce Docker ?
+## Qu'est ce Docker ?
 
 La virtualisation par conteneur se base sur la virtualisation linux LXC = LinuX Containers. Il s'agit d'une méthode de cloisonnement au niveau de l'OS. Le principe est de faire tourner des environnements Linux isolés les un des autres dans un conteneur partageant le même noyau. contrairement au machine virtuel traditionnel un conteneur n'inclue pas d'OS puisque qu'il s'appuie sur les fonctionnalité de l'OS de la machine haute. Les conteneurs accède alors à l'OS hôte de manière totalement isolé les uns des autres.  
 
@@ -30,21 +30,19 @@ Ensuite la fonctionnalité de  cloisonnement des espaces de nommage (namespace e
 
 La virtualisation par conteneurs est aussi caractérisée par la couche intermédiaire du contrôleur. Le contrôleur gère un ensemble de fonctionnalité pour les conteneurs. En premiers lieu, il y a évidemment les interactions des conteneurs avec l'OS. Ensuite la sécurité par la gestions de privilèges et de ressources. La scalabilité c'est-à-dire la duplication et la suppression des conteneurs. L'accessibilité des conteneurs à travers la gestion des API et CLI. La portabilité : c'est-à-dire la migration à froid ou à chaud de conteneurs. Enfin, il est à noté que le contrôleur peut simuler des environnements différents de celui de l'OS hôte.
 
-## conteneur vs machine virtuelle
+### conteneur vs machine virtuelle
 
 Une machine virtuelle ou Vm recrée intégralement un serveur c'est-à-dire avec un OS complet, ses pilotes, ses fichiers binaires ou bibliothèques ainsi que l'application elle-même. Comme le conteneur n'embarque pas d'OS il est beaucoup plus léger que la VM. Le conteneur est donc plus facile à migrer/télécharger et est plus rapides à sauvegarder/restaurer. La virtualisation par conteneur permet aussi aux serveurs d'héberger beaucoup plus de conteneurs que s'il s'agissait de VM.
 
 Docker est donc une technologie de virtualisation par conteneurs reposant sur LXC de linux. Il permet de créer des conteneurs qui vont uniquement contenir des applications avec leurs dépendances. Les conteneurs docker permettent d'embarquer des applications afin de les exécuter au sein de l'OS hôte mais de manière virtuellement isolée.
 
-# LES CONTENEURS
+## LES CONTENEURS
 
 Historiquement, quand on avait besoin de serveurs il fallait acheter des serveurs physique avec une quantité définie de CPU, de mémoire RAM ou de stockage sur le disque. Or on avait souvent besoin d'avoir de la puissance supplémentaire pendant des périodes de forte charge (fête de Noël par exemple). Ainsi il fallait acheter plus de serveurs pour répondre aux pics d'utilisation. Une solution a donc était créer pour résoudre se problème : la machine virtuelle 
 
-## Qu'est ce qu'une machine virtuelle ?
+### Qu'est ce qu'une machine virtuelle ?
 
 Lorsque qu'on appelle une machine virtuelle on fait de la virtualisation lourde. En effet, on recrée un systeme complet dans le systme hôte pour qu'il ait ses propres ressources. 
-
-!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0906a23c-cb3a-4a4a-8eb6-09f1c31ac869/15577645653523_vm.png
 
 - definitions
     
@@ -72,8 +70,6 @@ Un conteneur Linux est un processus ou un eemble de processur isolés du reste d
 
 Le conteneur permet de faire une virtualisation légère, c'est-à-dire qu'il ne virtualise pas les ressources, il ne crée qu'une isolation des processus. Le conteneurs partage donc les ressources avec le système hôte.
 
-!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2ef46499-9414-4255-b06b-d677a1e24132/15577645779374_vm-vs-conteneur.png
-
 Les avantages des conteneurs :
 
 - permet de réserver que les resource nécessaire. On peut allouer 16 Go de RAM à notre conteneur, mais celui-ci n'utilise que 2 Go, le reste ne sera pas vérouiller contrairement au VM
@@ -81,23 +77,19 @@ Les avantages des conteneurs :
 
 Les conteneurs permettent de réduire les coûts, d'augmenter la densité d'infrastructure, tout en améliorant le cycle de déploiement. 
 
-# Installer docker
+## Installer docker
 
 ```bash
 sudo apt-get install docker.io
 ```
 
-# Lister les conteneurs
+## Lister les conteneurs
 
 ```bash
 docker ps
 ```
 
-![liste des conteneurs lancé sur la machine. ](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e031f41a-54d3-4a36-a33f-ae0ff5e56615/Capture_decran_2020-11-06_a_19.07.38.png)
-
-liste des conteneurs lancé sur la machine. 
-
-# Lancer un conteneur
+## Lancer un conteneur
 
 Pour lancer un conteneur, il y a par default le docker hub qui est installer. Il a une image de base qui est installer qui s'appelle Alpine et c'est l'image la plus légers. Par défaut on est connecter au Docker Hub.
 
