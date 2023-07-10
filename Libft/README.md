@@ -224,3 +224,89 @@ la fonction strdup alloue une nouvelle zone de mémoire via la fonction malloc a
 - source : permet de définir l'adresse de la chaîne de caractères à dupliquer.
 ### VALEUR DE RETOUR
 S'il y a suffisamment de mémoire pour produire la nouvelle chaîne, la fonction renvoie l'adresse de la chaîne dupliquée. Dans le cas contraire, un pointeur nul vous sera retourné.
+
+
+# PART 2 - Fonction supplémentaires
+
+## 1. SUBSTR
+La fonction alloue avec malloc et retourne une chaine de caractères issue de la chaine 's'. Cette nouvelle chaine commence à l'index 'start' et a pour taille maximal 'len'. 
+### PARAMÈTRES
+- s : la chaîne de caractères de laquelle extraire la nouvelle chaîne.
+- start : L'index de début de la nouvelle chaîne dans la chaîne 's'.
+- len : La taille maximale de la nouvelle chaîne.
+### VALEUR DE RETOUR
+La nouvelle chaîne de caractères 
+Ou NULL si l'allocation échoue.
+
+## 2. STRJOIN
+Alloue avec malloc et retourne une nouvelle chaine, résultant de la concaténation de s1 et s2.
+### PARAMÈTRES
+- s1 : La chaine de caractères préfixe.
+- s2 : La chaine de caractère suffixe.
+### VALEUR DE RETOUR
+La nouvelle chaine de caractère, qui est la concaténation des deux chaines. 
+
+## 3. STRTRIM
+Alloue  et retourne une copie de la chaine de caractères donnée en argument, sans les caractères spécifiés dans le set donné en argument au début et à la fin de la chaine de caractères.
+### PARAMÈTRES
+- s1: La chaine de caractère à trimmer
+- s2: Le set de reference de caractères à trimmer
+### VALEUR DE RETOUR
+La chaine de caractère trimmée. NULL si l'allocation échoue.
+
+
+## 4. SPLIT
+Alloue et retourne un tableau de chaine de caracteres obtenu en séparant s à l'aide du cactère c, utilisé comme délimitaur. Le tableau doit être terminé par NULL.
+### PARAMÈTRES
+- s: La chaine de caractère à découper
+- c: Lecarctère délimitant
+### VALEUR DE RETOUR
+Le tableau de nouvelle chaines de caractères, résultant du découpage. NULL si l'allocation échoue.
+
+## 5. ITOA
+Alloue avec malloc et retourne une chaine de caractères représentant l’integer reçu en argument. Les nombres négatifs doivent être gérés.
+### PARAMÈTRES
+- n: L'integer à convertir
+### VALEUR DE RETOUR
+La chaine de caractères représentant l’int. NULL si l’allocation échoue.
+
+## 6. STRMAPI
+Applique la fonction f à chaque caractère de la chaine de caractères passée en argument pour créer une nouvelle chaine de caractères avec malloc résultant des applications successives de f.
+### PARAMÈTRES
+- s: La chaine de caractère sur laquelle itérer
+- f: La fonction à appliquer à chaque  caractère
+### VALEUR DE RETOUR
+La chaine de caractère résultant des applications successives de f. Retourne NULL si l'allocation échoue.
+
+## 7. PUTCHAR_FD
+Écrit le caractère c sur le file descriptor donné.
+### PARAMÈTRES
+- c : Le carctère à écrire
+- fd: Le file descriptor sur lequel écrire
+### VALEUR DE RETOUR
+Aucune.
+
+
+## 8. PUTSTR_FD
+Écrit le chaine caractère c sur le file descriptor donné.
+### PARAMÈTRES
+- s: La chaine de caractères à écrire
+- fd: Le file descriptor sur lequel écrire
+### VALEUR DE RETOUR
+Aucune.
+
+## 9. PUTENDL_FD
+Écrit le chaine caractère c sur le file descriptor donné, suivie d'un retrour a la ligne.
+### PARAMÈTRES
+- s: La chaine de caractères à écrire
+- fd: Le file descriptor sur lequel écrire
+### VALEUR DE RETOUR
+Aucune.
+
+## 10. PUTNBR
+Écrit l’integer n sur le file descriptor donné
+### PARAMÈTRES
+- n: L'integer à écrire
+- fd: le file descriptor sur lequel écrire
+### VALEUR DE RETOUR
+Aucune.
