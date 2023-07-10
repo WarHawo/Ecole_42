@@ -1,6 +1,7 @@
 First project of the school, the goal is to re-code some functions of the C library.
 
-1.Ft_memset
+# 1.Ft_memset
+
 Cette fonction permet de remplir une zone mémoire identifiée par son adresse et sa taille.
 # Paramètres
 
