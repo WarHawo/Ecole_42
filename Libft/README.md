@@ -1,0 +1,1 @@
+First project of the school, the goal is to re-code some functions of the C library.
