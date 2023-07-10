@@ -65,4 +65,4 @@ int		ft_str_type(t_option opt, va_list ap)
 		return (0);
 	ft_printstr(s, ft_strlen(s), opt);
 	return (1);
-}
+}   
