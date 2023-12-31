@@ -3,7 +3,7 @@
 /* fonction qui affiche l’alphabet en minuscule sur une seule ligne, dans
 l’ordre décroissant, à partir de la lettre ’z’.. */
 
-void ft_print_alphabet(void) 
+void ft_print_reverse_alphabet(void) 
 {
     char c = 'z';
     while (c >= 'a') {
@@ -14,6 +14,6 @@ void ft_print_alphabet(void)
 
 
 int main(void) {
-    ft_print_alphabet();
+    ft_print_reverse_alphabet();
     return 0;
 }
